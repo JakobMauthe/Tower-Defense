@@ -2,20 +2,13 @@ using UnityEngine;
 
 public class ArcherTower : Tower {
 
-	[SerializeField, Range(0.5f, 5f)]
-	float shotsPerSecond = 2.5f;
-
-	[SerializeField, Range(1f, 100f)]
-	float arrowDamage = 10f;
-
-	[SerializeField]
-	Transform archer = default;
+	[SerializeField, Range(0.5f, 5f)] float shotsPerSecond = 2.5f;
+	[SerializeField, Range(1f, 100f)] float arrowDamage = 10f;
+	[SerializeField] Transform archer;
 
 	public override TowerType TowerType => TowerType.Archer;
 
-	float launchSpeed;
-
-	float launchProgress;
+	float launchSpeed, launchProgress;
 
 	void Awake() {
 		OnValidate();
